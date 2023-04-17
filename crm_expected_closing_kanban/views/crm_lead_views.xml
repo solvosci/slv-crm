@@ -10,8 +10,13 @@
                 <field name="date_deadline" />
             </xpath>
             <xpath expr="//div//field[@name='tag_ids']" position="before">
-                <field name="date_deadline" />
+                <div>
+                    <field name="date_deadline" />
+                </div>
             </xpath>
+             <xpath expr="//kanban" position="attributes">
+                <attribute name="default_order">date_deadline</attribute>
+            </xpath> 
         </field>
     </record>
 
