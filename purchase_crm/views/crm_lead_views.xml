@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="crm_case_form_view_oppor_inherited_purchase" model="ir.ui.view">
+        <field name="name">crm.lead.oppor.inherited.purchase</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_set_won_rainbowman']" position="before">
+                <button string="New Purchase Order" name="action_purchase_orders_new" type="object" class="oe_highlight" groups="purchase.group_purchase_user"
+                        attrs="{'invisible': ['|', ('type', '=', 'lead'), '&amp;', ('probability', '=', 0), ('active', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//button[@name='action_schedule_meeting']" position="after">
+                    <button class="oe_stat_button" type="object" name="action_view_purchase_quotation" icon="fa-credit-card" groups="purchase.group_purchase_user" attrs="{'invisible': [('type', '=', 'lead')]}">
+                        <field name="purchase_quotation_count" widget="statinfo" string="Purchase Quotations"/>
+                    </button>
+                    <button class="oe_stat_button" type="object" groups="purchase.group_purchase_user" attrs="{'invisible': ['|', ('purchase_order_count', '=', 0), ('type', '=', 'lead')]}" name="action_view_purchase_order" icon="fa-usd">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value"><field name="purchase_amount_total" widget="monetary" options="{'currency_field': 'company_currency'}"/></span>
+                            <span class="o_stat_text"> Purchase Orders</span>
+                            <field name="purchase_order_count" invisible="1"/>
+                        </div>
+                    </button>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

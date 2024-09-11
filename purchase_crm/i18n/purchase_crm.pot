@@ -1,0 +1,166 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* purchase_crm
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-12 07:25+0000\n"
+"PO-Revision-Date: 2024-09-12 07:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_crm
+#: model_terms:ir.ui.view,arch_db:purchase_crm.crm_case_form_view_oppor_inherited_purchase
+msgid "<span class=\"o_stat_text\"> Purchase Orders</span>"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model.fields,field_description:purchase_crm.field_crm_purchase_order_opportunity_wiz__lead_id
+msgid "Associated Lead"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model.fields,field_description:purchase_crm.field_purchase_order__crm_lead_id
+msgid "CRM Lead"
+msgstr ""
+
+#. module: purchase_crm
+#: model_terms:ir.ui.view,arch_db:purchase_crm.crm_purchase_partner_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: purchase_crm
+#: model_terms:ir.ui.view,arch_db:purchase_crm.crm_purchase_partner_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model.fields.selection,name:purchase_crm.selection__crm_purchase_order_opportunity_wiz__action__create
+msgid "Create New Vendor"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model,name:purchase_crm.model_crm_purchase_order_opportunity_wiz
+msgid "Create new or use existing Vendor on new Purchase Order"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model.fields,field_description:purchase_crm.field_crm_purchase_order_opportunity_wiz__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model.fields,field_description:purchase_crm.field_crm_purchase_order_opportunity_wiz__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model.fields,field_description:purchase_crm.field_crm_purchase_order_opportunity_wiz__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model.fields.selection,name:purchase_crm.selection__crm_purchase_order_opportunity_wiz__action__nothing
+msgid "Do not link to a vendor"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model.fields,field_description:purchase_crm.field_crm_purchase_order_opportunity_wiz__id
+msgid "ID"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model.fields,field_description:purchase_crm.field_crm_purchase_order_opportunity_wiz____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model.fields,field_description:purchase_crm.field_crm_purchase_order_opportunity_wiz__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model.fields,field_description:purchase_crm.field_crm_purchase_order_opportunity_wiz__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model,name:purchase_crm.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr ""
+
+#. module: purchase_crm
+#: model_terms:ir.ui.view,arch_db:purchase_crm.purchase_view_inherit123
+msgid "Log in the chatter from which opportunity the order originates"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.actions.act_window,name:purchase_crm.crm_purchase_partner_action
+#: model_terms:ir.ui.view,arch_db:purchase_crm.crm_case_form_view_oppor_inherited_purchase
+#: model_terms:ir.ui.view,arch_db:purchase_crm.crm_purchase_partner_view_form
+msgid "New Purchase Order"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model.fields,field_description:purchase_crm.field_crm_lead__purchase_order_count
+msgid "Number of Purchase Order"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model.fields,field_description:purchase_crm.field_crm_lead__purchase_quotation_count
+msgid "Number of Quotations"
+msgstr ""
+
+#. module: purchase_crm
+#: code:addons/purchase_crm/wizard/crm_purchase_order_opportunity_wiz.py:0
+#, python-format
+msgid "Please select a vendor."
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.actions.act_window,name:purchase_crm.purchase_order_action_form
+#: model:ir.model,name:purchase_crm.model_purchase_order
+msgid "Purchase Order"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model.fields,field_description:purchase_crm.field_crm_purchase_order_opportunity_wiz__action
+msgid "Purchase Order Vendor"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model.fields,field_description:purchase_crm.field_crm_lead__purchase_order_ids
+msgid "Purchase Orders"
+msgstr ""
+
+#. module: purchase_crm
+#: model_terms:ir.ui.view,arch_db:purchase_crm.crm_case_form_view_oppor_inherited_purchase
+msgid "Purchase Quotations"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model.fields,field_description:purchase_crm.field_crm_lead__purchase_amount_total
+msgid "Sum of Orders"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model.fields.selection,name:purchase_crm.selection__crm_purchase_order_opportunity_wiz__action__exist
+msgid "Use Existing Vendor"
+msgstr ""
+
+#. module: purchase_crm
+#: model:ir.model.fields,field_description:purchase_crm.field_crm_purchase_order_opportunity_wiz__partner_id
+msgid "Vendor"
+msgstr ""
+
+#. module: purchase_crm
+#: code:addons/purchase_crm/wizard/crm_purchase_order_opportunity_wiz.py:0
+#, python-format
+msgid "You can only apply this action from a lead."
+msgstr ""

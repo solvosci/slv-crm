@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="purchase_order_action_form" model="ir.actions.act_window">
+        <field name="name">Purchase Order</field>
+        <field name="res_model">purchase.order</field>
+        <field name="view_mode">form,tree</field>
+        <field name="domain">[('crm_lead_id', '=', active_id)]</field>
+        <field name="context">{'default_crm_lead_id': active_id, 'default_partner_id': partner_id}</field>
+    </record>
+
+    <record id="purchase_view_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit.purchase</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='other_info']" position="inside">
+                <field name="crm_lead_id" help="Log in the chatter from which opportunity the order originates" groups="sales_team.group_sale_salesman"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
