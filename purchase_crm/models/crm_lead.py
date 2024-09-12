@@ -51,9 +51,9 @@ class CrmLead(models.Model):
             purchase_order_cnt = 0
             company_currency = lead.company_currency or self.env.user.company_id.currency_id
             for order in lead.purchase_order_ids:
-                if order.state in ('draft', 'sent'):
+                if order.state in ('draft','to approve', 'sent'):
                     quotation_cnt += 1
-                if order.state not in ('draft', 'sent', 'cancel'):
+                if order.state not in ('draft', 'sent','to approve', 'cancel'):
                     purchase_order_cnt += 1
                     total += order.currency_id._convert(
                         order.amount_untaxed, company_currency, order.company_id, order.date_order or fields.Date.today())
@@ -62,7 +62,7 @@ class CrmLead(models.Model):
             lead.purchase_order_count = purchase_order_cnt
 
     def action_view_purchase_quotation(self):
-        action = self.env.ref('purchase.purchase_form_action').read()[0]
+        action = self.env.ref('purchase.purchase_rfq').read()[0]
         action['context'] = {
             'search_default_draft': 1,
             'search_default_partner_id': self.partner_id.id,
@@ -70,7 +70,7 @@ class CrmLead(models.Model):
             'default_crm_lead_id': self.id
         }
         action['domain'] = [('crm_lead_id', '=', self.id), ('state', 'in', ['draft', 'sent'])]
-        quotations = self.purchase_order_ids.filtered(lambda l: l.state in ('draft', 'sent'))
+        quotations = self.purchase_order_ids.filtered(lambda l: l.state in ('draft','to approve','sent'))
         if len(quotations) == 1:
             action['views'] = [(self.env.ref('purchase.purchase_order_form').id, 'form')]
             action['res_id'] = quotations.id
@@ -86,7 +86,7 @@ class CrmLead(models.Model):
             'default_crm_lead_id': self.id,
         }
         action['domain'] = [('crm_lead_id', '=', self.id), ('state', 'not in', ('draft', 'sent', 'cancel'))]
-        orders = self.purchase_order_ids.filtered(lambda l: l.state not in ('draft', 'sent', 'cancel'))
+        orders = self.purchase_order_ids.filtered(lambda l: l.state not in ('draft', 'sent', 'to approve','cancel'))
         if len(orders) == 1:
             action['views'] = [(self.env.ref('purchase.purchase_order_form').id, 'form')]
             action['res_id'] = orders.id
